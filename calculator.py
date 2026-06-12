@@ -1,8 +1,12 @@
 def divide(a, b):
-    return a / b          # BUG: crashes on b=0
+    if b == 0:
+        raise ZeroDivisionError("cannot divide by zero")
+    return a / b
 
 def average(nums):
-    return sum(nums) / len(nums)   # BUG: crashes on empty list
+    if len(nums) == 0:
+        raise ValueError("cannot calculate average of empty list")
+    return sum(nums) / len(nums)
 
 def celsius_to_fahrenheit(c):
     return c * 9/5 + 32
