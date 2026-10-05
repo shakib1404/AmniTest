@@ -1,5 +1,7 @@
 def divide(a, b):
-    return a / b          # BUG: crashes on b=0
+    if b == 0:
+        raise ZeroDivisionError("Cannot divide by zero")
+    return a / b
 
 def average(nums):
     if len(nums) == 0:
