@@ -1,5 +1,5 @@
 import pytest
-from calculator import divide, average
+from calculator import divide, average, fahrenheit_to_celsius
 
 def test_divide_normal():
     assert divide(10, 2) == 5.0
@@ -11,4 +11,10 @@ def test_divide_by_zero():
 def test_average_empty():
     with pytest.raises(ValueError):
         average([])            # this will FAIL — agent must fix it
+
+def test_fahrenheit_to_celsius_freezing():
+    assert fahrenheit_to_celsius(32) == 0.0
+
+def test_fahrenheit_to_celsius_boiling():
+    assert fahrenheit_to_celsius(212) == 100.0
 
