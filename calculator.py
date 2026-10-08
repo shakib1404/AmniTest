@@ -1,5 +1,7 @@
 def divide(a, b):
-    return a / b          # BUG: crashes on b=0
+    if b == 0:
+        raise ZeroDivisionError("Cannot divide by zero")
+    return a / b
 
 def average(nums):
     if len(nums) == 0:
@@ -8,6 +10,9 @@ def average(nums):
 
 def celsius_to_fahrenheit(c):
     return c * 9/5 + 32
+
+def fahrenheit_to_celsius(f):
+    return (f - 32) * 5/9
 
 if __name__ == "__main__":
     print(divide(10, 2))
