@@ -6,6 +6,9 @@ def average(nums):
         raise ValueError("Cannot calculate average of an empty list")
     return sum(nums) / len(nums)
 
+def power(base, exp):
+    return base ** exp
+
 def celsius_to_fahrenheit(c):
     return c * 9/5 + 32
 
